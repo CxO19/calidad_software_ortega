@@ -1,14 +1,15 @@
-const {esPar} = require('./esPar');
+const { esPar } = require('./esPar');
 
-describe('puedeConducir', () => {
-    test('Happy path: 20 => Si', () => {
-        expect(puedeConducir(20)).toBe('Si');
-    });
-    test('Happy path: 16 => No', () => {
-        expect(puedeConducir(16)).toBe('No');
-    });
-    test('Sad path: n debe ser entero', () => {
-        expect(() => puedeConducir(-1)).toThrow('edad invalida')
-        expect(() => esPar('18')).toThrow('n debe ser entero')
-    });
-});
+describe('esPar',()=>{
+    test('Happy path: 8 es par', ()=>{
+        expect(esPar(8)).toBe(true)
+    })
+    test('Happy path: 7 es impar', ()=>{
+        expect(esPar(7)).toBe(false)
+    })
+    test('Sad path: n debe ser entero es par', ()=>{
+        expect(()=>esPar(3.5).toThrow('n debe ser entero'))
+        expect(()=>esPar('10').toThrow('n debe ser entero'))
+    })
+
+})

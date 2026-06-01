@@ -1,13 +1,6 @@
-function puedeConducir(edad) {
-    if(!Number.isInteger(edad))
-        throw new TypeError('Edad invalida');
-    if(edad < 0)
-        throw new RangeError('Edad invalida');
-    return edad >= 18 ? 'Si' : 'No';
+function esPar(n){
+    if(!Number.isInteger(n)) 
+        throw new TypeError('n debe ser entero');
+    return n%2===0;
 }
-
-module.exports = {puedeConducir};
-
-/*
-
-*/
+module.exports={ esPar };
